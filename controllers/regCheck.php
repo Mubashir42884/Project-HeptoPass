@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require_once("../models/membersModel.php");
+
     $username = $_POST['username'];
     $name = $_POST['name'];
     $password = $_POST['password'];
@@ -44,8 +46,10 @@
     elseif (!$number || !$specialChars || $len_pwd < 4) {
         echo "<script>alert('Password must contain at least 4 characters with number and special character!');</script>";
     }else {
+        $_SESSION['valid'] = 'true';
         $user = ['username'=> $username, 'name'=> $name, "password"=> $password, "conpwd"=> $conpwd, "phno"=> $phno, "email"=> $email, "gender"=> $gender, "dob"=>$dob, "dp"=>$dp];
         $_SESSION['user'] = $user;
+        insertMember($user);
         header('location: ../views/Login.php');
     }
 

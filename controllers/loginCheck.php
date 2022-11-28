@@ -1,21 +1,26 @@
 <?php
     session_start();
-    require_once "../models/administrationModel.php";
+    require_once "../models/membersModel.php";
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    $validate = searchMemberById($username, $password);
+
     if($username == "" && $password == ""){
+        echo "<script>alert('Username and Password cannot be null!');</script>";
+        #header('location: ../views/Login.php');
 
-        header('location: ../views/Login.php?err=null&&msg=none');
+    }else if($validate == 'true'){
 
-    }else if($username == $_SESSION['user']['username'] && $password == $_SESSION['user']['password']){
-
-        setcookie('status', 'true', time()+3600, '/');
+        $_SESSION['valid'] = 'true';
+        $_SESSION['username'] = $username;
         header('location: ../views/members/Member Dashboard.php');
         
+    }else if($validate == 'false'){
+        echo "<script>alert('Invalid User!');</script>";
     }else{
-        echo "invalid user";
+        echo "<script>alert('User cannot be verified!');</script>";
     }
 
 
