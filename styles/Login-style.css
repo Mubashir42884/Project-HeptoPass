@@ -1,0 +1,315 @@
+body {
+    margin: 0px;
+    padding: 0PX;
+    background: whitesmoke ;
+}
+
+.welcome p{
+    font-family: 'Quicksand';
+    font-size: 32px;
+    font-weight: 700;
+}
+
+nav {
+    height: 20%;
+    background-image: linear-gradient(rgb(49, 8, 49), rgb(79, 10, 79), rgb(89, 24, 89)) ;
+}
+
+nav ul{
+    display: right;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    float:right;
+}
+
+nav li a{
+    width: 100px;
+    margin-right: 40px;
+    display: block;
+    padding: 0px 0px;
+    text-decoration:none;
+    font-size: 18px;
+    font-weight: 750;
+    font-family: 'Quicksand';
+    color: rgb(255, 190, 0);
+    text-align: center;
+}
+
+nav li a:hover{
+    background: rgba(49, 8, 49, 0.400);
+    transform: scale(1.2);
+    width: 115px;
+}
+
+.title img{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: -70px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.title img:hover{
+    transform: scale(1.15);
+}
+
+
+.container{
+    max-width: 500px;
+    margin-top: 50px;
+    margin-left: 600px;
+    height: 65%;
+    padding: 30px 30px;
+    background: rgb(255, 213, 89);
+    border-top: 2px solid rgb(49, 8, 49);
+    border-bottom: 2px solid rgb(49, 8, 49);
+    border-right: 2px solid rgb(49, 8, 49);
+    border-left: 2px solid rgb(49, 8, 49);
+    border-color: rgb(49, 8, 49);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Quicksand';
+    font-size: 18px;
+    font-weight: bolder;
+    color: rgb(89, 24, 89);
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.container .label{
+    font-family: 'Quicksand';
+    font-size: 18px;
+    font-weight: bolder;
+    color: rgb(89, 24, 89);
+    font-size: 28px;
+    font-weight: bolder;
+    position: relative;
+}
+
+.container .label::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 324px;
+    background: rgb(89, 24, 89);
+}
+
+.container .label:hover{
+    font-family: 'Quicksand';
+    font-size: 18px;
+    font-weight: bolder;
+    color: rgb(129, 228, 253);
+    background: linear-gradient(rgb(49, 8, 49), rgb(79, 10, 79), rgb(89, 24, 89));
+    width: 324px;
+    font-size: 28px;
+    font-weight: bolder;
+    position: relative;
+    transition: all 1.5s ease;
+    cursor: default;
+}
+
+.container form .user_details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user_details .input_box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user_details .input_box .details{
+    display: block;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+.user_details .input_box input{
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(49, 8, 49);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 4px;
+    transition: all 0.3s ease;
+}
+
+.input_box .fa-eye{
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: rgb(49, 8, 49);
+    cursor: pointer;
+    padding: 3px;
+}
+
+.user_details .error{
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: rgb(224, 14, 14);
+}
+
+.error .error-icon{
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+.user_details .error p{
+    position: flex;
+    bottom: 10px;
+    font-size: 14px;
+    font-weight: bolder;
+    color: rgb(224, 14, 14);
+}
+
+
+.user_details .input_box input:focus,
+.user_details .input_box input:valid{
+    border-color: rgb(129, 228, 253);
+}
+
+form .gender_details .gender_title{
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+form .gender_details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.gender_details .category label{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.gender_details .error{
+    position: flex;
+    bottom: 10px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: rgb(224, 14, 14);
+}
+
+.gender_details .category .dot{
+    height: 10px;
+    width: 10px;
+    background: whitesmoke;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+}
+
+.gender_details .category .dot:hover{
+    cursor: pointer;
+    background: rgb(129, 228, 253);
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    border-color: rgb(49, 8, 49);
+    background: rgb(129, 228, 253);
+}
+
+
+.check .agree{
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.check .error{
+    position: flex;
+    bottom: 10px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: rgb(224, 14, 14);
+}
+
+form input[type="radio"]{
+    display: none;
+}
+
+form .button{
+    height: 30px;
+    margin: 20px 0;
+}
+
+form .button input{
+    height: 35px;
+    width: 245px;
+    outline: none;
+    color: whitesmoke;
+    border:none;
+    font-size: 18px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(rgb(49, 8, 49), rgb(79, 10, 79), rgb(89, 24, 89));
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+}
+
+form .button input:hover{
+    font-family: 'Quicksand';
+    font-weight: bolder;
+    color: rgb(49, 8, 49);
+    background: linear-gradient(rgb(84, 207, 255), rgb(187, 241, 255));
+    cursor: pointer;
+    transition: all 0.8s ease;
+}
+
+form .check input{
+    width: 20px;
+    outline: none;
+    color: whitesmoke;
+    border:none;
+}
+
+form .check input:hover{
+    cursor: pointer;
+    transition: all 0.8s ease;
+}
+
+form .check{
+    font-family: 'Quicksand';
+    font-size: 16px;
+    font-weight: bolder;
+    color: rgb(89, 24, 89);
+    font-weight: bolder;
+    text-align: center;
+}
+
+.display{
+    max-width: 500px;
+}
+
+@media (max-width: 500px){
+    .display{
+        max-width: 100%;
+    }
+}
+
+

@@ -3,21 +3,20 @@
 
     function insertMember($user){
         $con = getConnection();
-        $sql = "insert into members values('', '{$user['name']}', '{$user['email']}', '{$user['phno']}', '{$user['gender']}', '{$user['dob']}', '{$user['username']}', '{$user['password']}', '', '', 'Basic')";
+        $sql = "insert into members (uid, name, email, phno, gender, dob, username, pass, dp, address, status) values('', '{$user['name']}', '{$user['email']}', '{$user['phno']}', '{$user['gender']}', '{$user['dob']}', '{$user['username']}', '{$user['password']}', '', '', 'Basic');";
         $status = mysqli_query($con, $sql);
         return $status;
     }
 
-    function searchMemberById($uname,$pwd){
+    function searchMemberById($loginInfo){
         $con = getConnection();
-        $username = $uname ;
-        $pass = $pwd;
-        $sql = "select * from members where username = '$username' and pass='$pass'";
+        $sql = "select * from members where username = '{$loginInfo['uname']}' and pass='{$loginInfo['pass']}'";
         $status = mysqli_query($con, $sql);
-        if($status){
-            return 'true';
-        }else{
+
+        if($status == 'false'){
             return 'false';
+        }else{
+            return 'true';
         }
     }
 

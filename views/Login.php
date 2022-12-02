@@ -41,7 +41,7 @@
 
                             </tr>
                             <tr style="font-size: 18px;">
-                                <td  colspan="2" align="center"><input type="submit" name="Login" value="Login" style="font-family:'Quicksand'; font-size: 18px;" /></td>
+                                <td  colspan="2" align="center"><button type="submit" name="Login" style="font-family:'Quicksand'; font-size: 18px;">Login</button></td>
                             </tr>
                             <tr style="font-size: 14px;">
                                 <td align="center" colspan="2">

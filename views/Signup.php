@@ -1,94 +1,124 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="../styles/Login-style.css">
+    <script src="https://kit.fontawesome.com/718270188e.js" crossorigin="anonymous"></script>
+
+    <title>Registration</title>
 </head>
-<body style="font-family: Quicksand ;">
-    <table border="0">
-        <tr bgcolor="#4e0755">
-            <th style='border:white;' align="center" colspan="2">
-                <a href="Home.php"><img src="../assets/Logo.png" height="180"></a>
+<body>
 
-                <p style='border:none; font-size: 20;' align="right">
-                    <a href="Home.php" style="color: #99d9ea ;">Home</a>&nbsp;|&nbsp;&nbsp;
-                    <a href="Login.php" style="color: #99d9ea ;">Login</a>&nbsp;&nbsp;&nbsp;                </p>
-            </th>
-        </tr>
+    <div class="dsiplay">
+        
+        <div class="title">
 
-        <tr style="font-size: 26px;">
-            <td align="center">
-                <form method="post" action="../controllers/regCheck.php">
+            <p align="center">
+                <a href="Home.php">
+                    <img src="../assets/HeaderLogo.png" height="140px">
+                </a>
+            </p>
+            <nav>
+                <br><br><br><br><br><br>
+                <ul>
+                    <li><a href="Signup.php">Registration</a></li>
+                    <li><a href="Login.php">Login</a></li>
+                    <li><a href="Home.php">Home</a></li>
+                </ul>      
+            </nav>
+
+        </div>
+
+        <div class="container">
+        <div class="label">MEMBER REGISTRATION</div>
+        <form class="login_form" method="post" action="../controllers/regCheck.php">
+
+            <div class="user_details">
+                <div class="input_box">
+                    <span class="details">Name :</span>
+                    <input type="text" name="name" id="name" onkeyup="validateName()" value="" placeholder="Enter Name" required>
+                </div>
+                <span class="error name-error" name="name-error" id="name-error">
+                    <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                    <p class="error-text">Enter a valid name!</p>
+                </span>
+
+                <div class="input_box">
+                    <span class="details">Email :</span>
+                    <input type="text" name="email" id="email" value="" placeholder="Enter Email" required>
+                </div>
                 
-                    <fieldset style="width: 550px; border-radius: 30px;">
-                    <legend  style="color: #4e0755; border-radius: 5px;"><b>REGISTRATION</b></legend>
-                    <table border="0">
-                        <tr style="font-size: 18px;">
-                            <td>Name</td>
-                            <td> : <input size="35" type="text" name="name" value="" style="font-family:'Quicksand'; font-size: 18px;"><span style="font-family:'Quicksand'; font-size: 18px; color: red;"> <b>*<b></span></td>
-                        </tr>
 
-                        <tr style="font-size: 18px;">
-                            <td>Email</td>
-                            <td> : <input type="email" name="email" value="" style="font-family:'Quicksand'; font-size: 18px;"> <span style="font-family:'Quicksand'; font-size: 18px; color: red;"> <b>*<b></span></td>
-                        </tr>
+                <div class="input_box">
+                    <span class="details">Phone No :</span>
+                    <input type="tel" name="phno" id="phno" value="" placeholder="Enter Phone" required>
+                    <span class="error" name="phone-error" id="phone-error"></span>
+                </div>
 
-                        <tr style="font-size: 18px;">
-                            <td>Phone No</td>
-                            <td> : <input type="tel" name="phno" value="" style="font-family:'Quicksand'; font-size: 18px;"></td>
-                        </tr>
+                <div class="input_box">
+                    <span class="details">Date of Birth :</span>
+                    <input type="date" name="dob" id="dob" value="" required>
+                    <span class="error" name="dob-error" id="dob-error"></span>
+                </div>
+                
+                <div class="input_box">
+                    <span class="details">Username :</span>
+                    <input type="text" name="username" id="uid" value="" placeholder="Enter Username" required>
+                    <span class="error" name="username-error" id="username-error"></span>
+                </div>
 
-                        <tr style="font-size: 18px;">
-                            <td>Gender </td>
-                            <td> : 
-                                <input type="radio" id="male" name="gender" value="Male" style="font-family:'Quicksand'; font-size: 18px;"> <label for="male">Male</label>
-                                <input type="radio" id="female" name="gender" value="Female" style="font-family:'Quicksand'; font-size: 18px;"> <label for="female">Female</label>
-                                <input type="radio" id="others" name="gender" value="Others" style="font-family:'Quicksand'; font-size: 18px;"> <label for="others">Others</label>
-                                <span style="font-family:'Quicksand'; font-size: 18px; color: red;"> <b>*<b></span>
-                            </td>
-                        </tr>
+                <div class="input_box">
+                    <span class="details">Password :</span>
+                    <input type="password" name="password" id="pass" value="" placeholder="Enter Password" required>
+                </div>
+                <span class="error email-error" name="email-error" id="email-error">
+                        <i class="fa-solid fa-eye"></i>
+                        <p class="error-text">Enter a valid Password!</p>
+                </span>
 
-                        <tr style="font-size: 18px;">
-                            <td>Date of Birth</td>
-                            <td> : <input type="date" name="dob" value=" " style="font-family:'Quicksand'; font-size: 18px;"/><br />
-                        </tr>
+                <div class="input_box">
+                    <span class="details">Confirm Password :</span>
+                    <input type="password" name="conpwd" id="conpwd" value="" placeholder="Confirm Password" required>
+                    <span class="error" name="conpwd-error" id="conpwd-error"></span>
+                </div>
+            </div>
 
-                        <tr style="font-size: 18px;">
-                            <td>Username</td>
-                            <td> : <input type="text" name="username" value="" style="font-family:'Quicksand'; font-size: 18px;"><span style="font-family:'Quicksand'; font-size: 18px; color: red;"> <b>*<b></span></td>
-                        </tr>
+            <div class="gender_details">
+                <input type="radio" name="gender" id="dot-1" value="Male">
+                <input type="radio" name="gender" id="dot-2" value="Female">
+                <input type="radio" name="gender" id="dot-3" value="Others">
 
-                        <tr style="font-size: 18px;">
-                            <td>Password</td>
-                            <td> : <input type="password" name="password" value="" style="font-family:'Quicksand'; font-size: 18px;"><span style="font-family:'Quicksand'; font-size: 18px; color: red;"> <b>*<b></span></td>
-                        </tr>
+                <span class="gender_title">Gender</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Male</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Female</span>
+                    </label>
+                    <label for="dot-3">
+                        <span class="dot three"></span>
+                        <span class="gender">Others</span>
+                    </label>
+                </div>
+                <span class="error" name="gender-error" id="gender-error"></span>
+            </div>
 
-                        <tr style="font-size: 18px;">
-                            <td>Confirm Password</td>
-                            <td> : <input type="password" name="conpwd" value="" style="font-family:'Quicksand'; font-size: 18px;"><span style="font-family:'Quicksand'; font-size: 18px; color: red;"> <b>*<b></span></td>
-                        </tr>
+            <div class="check">
+                <input type="checkbox" name="check" id="click" required/>
+                <span class="agree">Agree to Terms & Policy</span><br>
+                <span class="error" name="check-error" id="check-error"></span>
+            </div>
 
+            <div class="button">
+                <input type="submit" value="Register">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+        </div>
+    </div>
+    <script src="error.js"></script>
 
-                        <tr style="font-size: 18px;">
-                            <td colspan="2" align="center"> <input type="checkbox" style="font-family:'Quicksand'; font-size: 18px;" required/> <b>Agree to Terms & Policy</b></td>
-                        </tr>
-                        <tr><td colspan="2"><br></td></tr>
-                        <tr style="font-size: 18px;">
-                            <td colspan="2" align="center">
-                                <input type="submit" name="register" value="Register" style="font-family:'Quicksand'; font-size: 18px;">
-                                <input type="reset" name="reset" value="Reset" style="font-family:'Quicksand'; font-size: 18px;">
-                            </td>
-                        </tr>
-                    </table>
-                    </fieldset>
-                </form>
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="3" width="1920" height="50" style='border:none;'>
-                <h4 align="center">Copyright ⓒ 2022</h4>
-            </td>
-        </tr>
-    </table>
 </body>
 </html>
