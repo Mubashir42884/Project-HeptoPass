@@ -1,0 +1,338 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand';
+  }
+
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, rgb(180, 237, 255), whitesmoke);
+  }
+
+  .fixed-header{
+    top: 0;
+    width: 100%;
+    height: 18%;
+    position: fixed;        
+    background: linear-gradient( rgb(49, 8, 49),rgb(117, 28, 117));
+    padding: 10px 0;
+    color: #fff;
+}
+.fixed-header img:hover{
+ height: 140px;
+}
+.fixed-footer{
+    bottom: 0;
+    color: rgb(250, 185, 44);
+    text-align: center;
+    font-weight: bolder;
+    width: 100%;
+    height: 5%;
+    position: fixed;        
+    background: linear-gradient(0deg, rgb(49, 8, 49),rgb(117, 28, 117));
+    padding: 10px 10px;
+}
+
+.fixed-header a{
+    padding-top: -0px;
+}
+
+.fixed-header a:hover{
+    transform: scale(1.2);
+}
+nav a{
+    color: rgb(250, 185, 44);
+    font-size: 18px;
+    font-weight: bolder;
+    margin-top: 0px;
+    text-decoration: none;
+    padding: 7px 25px;
+    display: inline-block;
+}
+  .container{
+    overflow: auto;
+    margin-top: 150px;
+    margin-bottom: 30px;
+    width: 500px;
+    background-color: rgb(255, 204, 95);
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(166, 234, 255, 0.753);
+  }
+.container header {
+    padding-left: 5px;
+    width: 400px;
+    color: rgb(89, 24, 89);
+    font-weight: bolder;
+    font-size: 28px;
+    position: relative;
+}
+.container header::before{
+    content: "";
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+    height: 3px;
+    width: 80px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  .container header:hover{
+    font-family: 'Quicksand';
+    font-size: 28px;
+    font-weight: bolder;
+    color: rgb(180, 237, 255);
+    background: linear-gradient(rgb(49, 8, 49), rgb(79, 10, 79), rgb(89, 24, 89));
+    width: 350px;
+    height: 35px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+.container .login-header header{
+    padding-left: 5px;
+    width: 225px;
+    color: rgb(89, 24, 89);
+    font-weight: bolder;
+    font-size: 28px;
+    position: relative;
+}
+.container .login-header:hover{
+    font-family: 'Quicksand';
+    font-size: 28px;
+    font-weight: bolder;
+    color: rgb(180, 237, 255);
+    background: linear-gradient(rgb(49, 8, 49), rgb(79, 10, 79), rgb(89, 24, 89));
+    width: 225px;
+    height: 35px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+.container form {
+  margin-top: 20px;
+}
+.container .login p{
+    color: rgb(89, 24, 89);
+    font-family: 'Quicksand';
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.container .login a{
+    color: rgb(49, 8, 49);
+}
+.container .signup p{
+    color: rgb(89, 24, 89);
+    font-family: 'Quicksand';
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.container .signup a{
+    color: rgb(49, 8, 49);
+}
+.container .adminLogin p{
+    color: rgb(49, 8, 49);
+    font-family: 'Quicksand';
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.container .adminLogin a{
+    color: rgb(49, 8, 49);
+}
+form .field {
+  margin-bottom: 10px;
+}
+form .input-field {
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+.input-field input {
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(49, 8, 49);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 4px;
+    transition: all 0.3s ease;
+}
+
+.input-field input:hover{
+    border-color: rgb(180, 237, 255);
+}
+form .login-field {
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+.login-field input {
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(49, 8, 49);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 4px;
+    transition: all 0.3s ease;
+}
+
+.login-field input:hover{
+    border-color: rgb(180, 237, 255);
+}
+
+.invalid input {
+  border-color: #d93025;
+}
+.input-field .show-hide{
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+  color:  rgb(79, 10, 79);
+  cursor: pointer;
+  padding: 3px;
+}
+.login-field .show-hide{
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    color:  rgb(79, 10, 79);
+    cursor: pointer;
+    padding: 3px;
+  }
+.field .error {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  color: #d93025;
+  font-size: 13px;
+  display: none;
+}
+.invalid .error {
+  display: flex;
+}
+.error .error-icon {
+  margin-right: 6px;
+  font-size: 15px;
+}
+.error .error-text {
+  font-size: 15px;
+}
+.create-password .error {
+  align-items: flex-start;
+}
+.create-password .error-icon {
+  margin-top: 4px;
+}
+
+form .gender-details .gender-title{
+    color: rgb(117, 28, 117);
+    font-size: 18px;
+    font-weight: bolder;
+   }
+   form .category{
+    color: rgb(117, 28, 117);
+    font-size: 18px;
+    font-weight: bolder;
+    display: flex;
+    width: 75%;
+    margin: 14px 0 ;
+    justify-content: space-between;
+   }
+   form .category label{
+    color: rgb(117, 28, 117);
+    font-size: 18px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+   }
+   form .category label .dot{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: rgb(180, 237, 255);
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+  }
+   #dot-1:checked ~ .category label .one,
+   #dot-2:checked ~ .category label .two,
+   #dot-3:checked ~ .category label .three{
+     top: 0;
+     background: rgb(180, 237, 255);
+     border-color: rgb(117, 28, 117);
+   }
+   form input[type="radio"]{
+     display: none;
+   }
+
+.check .agree{
+    font-size: 18px;
+    font-weight: bolder;
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+.check .error{
+    position: flex;
+    bottom: 10px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: rgb(224, 14, 14);
+    padding-bottom: 10px;
+}
+
+form .check input{
+    width: 20px;
+    outline: none;
+    color: whitesmoke;
+    border:none;
+    padding-bottom: 10px;
+}
+
+form .check input:hover{
+    cursor: pointer;
+    transition: all 0.8s ease;
+}
+
+form .check{
+    font-family: 'Quicksand';
+    font-size: 16px;
+    font-weight: bolder;
+    color: rgb(89, 24, 89);
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.button {
+  margin: 0px 0 5px;
+}
+.button input {
+  color: rgb(250, 185, 44);
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: rgb(89, 24, 89);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button input:hover {
+    color: rgb(89, 24, 89);
+    background-color: rgb(180, 237, 255);
+    border-color: rgb(49, 8, 49);
+}

@@ -33,7 +33,7 @@
 
         <div class="field name-field">
           <div class="input-field">
-            <input type="text" placeholder="Enter your Name" class="name" required />
+            <input type="text" nam="name" placeholder="Enter your Name" class="name" required />
           </div>
           <span class="error name-error">
             <i class="bx bx-error-circle error-icon"></i>
@@ -43,7 +43,7 @@
 
         <div class="field email-field">
           <div class="input-field">
-            <input type="email" placeholder="Enter your email" class="email" required/>
+            <input type="email"  name="email" placeholder="Enter your email" class="email" required/>
           </div>
           <span class="error email-error">
             <i class="bx bx-error-circle error-icon"></i>
@@ -53,7 +53,7 @@
 
         <div class="field phone-field">
           <div class="input-field">
-            <input type="tel" placeholder="Enter your Phone No." class="phno" required/>
+            <input type="tel" name="phno" placeholder="Enter your Phone No." class="phno" required/>
           </div>
           <span class="error phone-error">
             <i class="bx bx-error-circle error-icon"></i>
@@ -63,7 +63,7 @@
 
         <div class="field dob-field">
           <div class="input-field">
-            <input type="date" placeholder="Enter your Date of Birth" class="dob" required/>
+            <input type="date" name="dob" placeholder="Enter your Date of Birth" class="dob" required/>
           </div>
           <span class="error dob-error">
             <i class="bx bx-error-circle error-icon"></i>
@@ -73,7 +73,7 @@
 
         <div class="field uid-field">
           <div class="input-field">
-            <input type="text" placeholder="Enter your Username" class="uid" required/>
+            <input type="text" name="username" placeholder="Enter your Username" class="uid" required/>
           </div>
           <span class="error uid-error">
             <i class="bx bx-error-circle error-icon"></i>
@@ -85,6 +85,7 @@
           <div class="input-field">
             <input
               type="password"
+              name="password"
               placeholder="Create password"
               class="password"
               required
@@ -104,6 +105,7 @@
           <div class="input-field">
             <input
               type="password"
+              name="conpwd"
               placeholder="Confirm password"
               class="cPassword"
               required

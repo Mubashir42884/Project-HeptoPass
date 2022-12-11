@@ -33,7 +33,7 @@
 
         <div class="field uid-field">
           <div class="login-field">
-            <input type="text" placeholder="Enter Your Username" class="uid" />
+            <input type="text" name="username" placeholder="Enter Your Username" class="uid" />
           </div>
           <span class="error uid-error">
             <i class="bx bx-error-circle error-icon"></i>
@@ -45,6 +45,7 @@
           <div class="login-field">
             <input
               type="password"
+              name="password"
               placeholder="Enter Your Password"
               class="password"
             />
@@ -62,7 +63,7 @@
           <input type="submit" value="Login" />
         </div>
         <div class="signup">
-            <p>Don't have an account?<a href="Login.php"> Sign Up Here</a></p>
+            <p>Don't have an account?<a href="Signup.php"> Sign Up Here</a></p>
         </div>
         <div class="adminLogin">
            <p><a href="administrationLogin.php">Administration Login</a></p>

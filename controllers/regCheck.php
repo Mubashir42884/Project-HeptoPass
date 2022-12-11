@@ -1,20 +1,9 @@
 <?php
-
-    if(isset($_POST["register"])){
         session_start();
         require_once("../models/membersModel.php");
 
-        $username = $_POST['username'];
-        $name = $_POST['name'];
-        $password = $_POST['password'];
-        $conpwd = $_POST['conpwd'];
-        $phno = $_POST['phno'];
-        $email = $_POST['email'];
-        $gender = $_POST['gender'];
-        $dob = $_POST['dob'];
 
-
-        //for validation pupose
+        /*/for validation pupose
         $len_uname = strlen($username);
         $len_pwd = strlen($password);
         $len_phn = strlen($phno);
@@ -46,10 +35,21 @@
         // password validation check
         elseif (!$number || !$specialChars || $len_pwd < 4) {
             echo "<script>alert('Password must contain at least 4 characters with number and special character!');</script>";
-        }else {
-            $_SESSION['valid'] = 'true';
+        }
+        
+        else {*/
+        if($_SESSION['valid'] =='true'){
+            $username = $_POST['username'];
+            $name = $_POST['name'];
+            $password = $_POST['password'];
+            $conpwd = $_POST['conpwd'];
+            $phno = $_POST['phno'];
+            $email = $_POST['email'];
+            $gender = $_POST['gender'];
+            $dob = $_POST['dob'];
+
             $user = ['username'=> $username, 'name'=> $name, "password"=> $password, "phno"=> $phno, "email"=> $email, "gender"=> $gender, "dob"=>$dob];
-            //$_SESSION['user'] = $user;
+            $_SESSION['user'] = $user;
             $validation = insertMember($user);
             if($validation){
                 header('location: ../views/Login.php?registration=success');
@@ -57,9 +57,4 @@
                 header('location: ../views/Signup.php?registration=unsuccess');
             } 
         }
-
-    }else{
-        header("location: ../views/Signup.php");
-    }
-
 ?>

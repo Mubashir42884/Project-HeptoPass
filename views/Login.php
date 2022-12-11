@@ -1,65 +1,83 @@
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body style="font-family: Quicksand ;">
-    <table border="0">
-        <tr bgcolor="#4e0755">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member Login</title>
 
-            <th style='border:white;' align="center" colspan="2">
-                <a href="Home.php"><img src="../assets/Logo.png" height="180"></a>
+    <link rel="stylesheet" href="../styles/style.css" />
 
-                <p style='border:none; font-size: 20;' align="right">
-                    <a href="Home.php" style="color: #99d9ea ;">Home</a>&nbsp;|&nbsp;&nbsp;
-                    <a href="Signup.php" style="color: #99d9ea ;">&nbsp;Registration</a>&nbsp;&nbsp;
-                </p>
-            </th>
-        </tr>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+  <thead>
+    <div class="fixed-header">
+        <p align="center">
+            <a class="logo" href="Home.php">
+                <img src="../assets/HeaderLogo.png" height="120px">
+            </a>
+        </p>
+        <nav align="right">
+            <a href="Home.php">Home</a>
+            <a href="Signup.php">Registration</a>
+        </nav>
+    </div>
+  </thead>
 
-        </tr>
+    <div class="container">
+      <header class="login-header">MEMBER LOGIN</header>
+      <form method="post" action="../controllers/loginCheck.php">
 
-        <tr style="font-size: 26px;">
-            <td colspan="3" width="1920" align="center">
-                <form method="post" action="../controllers/loginCheck.php">
-                    <fieldset style="width:700px; border-radius: 30px;" >
-                        <legend  style="color: #4e0755; border-radius: 5px;"><b>LOGIN</b></legend>
+        <div class="field uid-field">
+          <div class="login-field">
+            <input type="text" name="username" placeholder="Enter Your Username" class="uid" />
+          </div>
+          <span class="error uid-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Member not found!</p>
+          </span>
+        </div>
 
-                        <table border="0" width="500">
-                            <tr style="font-size: 18px;">
-                                <td><label id="uname">Username</label></td>
-                                <td>:<input type="text" name="username" id="uname" style="font-family:'Quicksand'; font-size: 18px;" /></td>
-                            </tr>
-                            <tr style="font-size: 18px;">
-                                <td><label id="pass">Password</label></td>
-                                <td>:<input type="password" name="password" id="pass" style="font-family:'Quicksand'; font-size: 18px;"/>
-                                <a href="Forgot Password.html">Forgot Password?</a>
-                            </td>
-                            </tr>
-                            <tr style="font-size: 18PX;">
-                                <td colspan="2" align="left"><input type="checkbox" name="remember" style="font-family:'Quicksand'; font-size: 18px;"/> Remember Me</td>
+        <div class="field enter-password">
+          <div class="login-field">
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Your Password"
+              class="password"
+            />
+            <i class="bx bx-hide show-hide"></i>
+          </div>
+          <span class="error password-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">
+              Password does not match!
+            </p>
+          </span>
+        </div>
 
-                            </tr>
-                            <tr style="font-size: 18px;">
-                                <td  colspan="2" align="center"><button type="submit" name="Login" style="font-family:'Quicksand'; font-size: 18px;">Login</button></td>
-                            </tr>
-                            <tr style="font-size: 14px;">
-                                <td align="center" colspan="2">
-                                    Don't have an account? <a href="Signup.php">Signup Here</a>
-                                    <br><a href="administrationLogin.php">Administration Login</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </fieldset>
-                </form>
-            </td>
-        </tr>
+        <div class="login-field button">
+          <input type="submit" value="Login" />
+        </div>
+        <div class="signup">
+            <p>Don't have an account?<a href="Signup.php"> Sign Up Here</a></p>
+        </div>
+        <div class="adminLogin">
+           <p><a href="administrationLogin.php">Administration Login</a></p>
+        </div>
+      </form>
+    </div>
 
-        <tr>
-            <td colspan="3" width="1920" height="50" style='border:none;'>
-                <h4 align="center">Copyright ⓒ 2022</h4>
-            </td>
-        </tr>
-    </table>
-</body>
+    <tfoot>
+        <div class="fixed-footer">
+            <div class="foot">Copyright &copy; 2022 | HeptoPass</div>        
+        </div>
+    </tfoot>
+
+        <script src="../js/script.js"></script>
+  </body>
 </html>
+
