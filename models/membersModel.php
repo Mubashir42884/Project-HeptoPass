@@ -23,8 +23,7 @@
 
     function loginMember($user){
         $con = getConnection();
-
-        $sql = "select * from users where username='{$user['username']}' and password='{$user['password']}'";
+        $sql = "select * from members where username='{$user['username']}' and pass='{$user['password']}'";
         $result = mysqli_query($con, $sql);
         $user = mysqli_fetch_assoc($result);
         

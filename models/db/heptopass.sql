@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2022 at 09:50 AM
+-- Generation Time: Dec 12, 2022 at 12:00 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -85,7 +85,7 @@ CREATE TABLE `members` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phno` varchar(15) NOT NULL,
-  `gender` varchar(10) NOT NULL,
+  `gender` varchar(10) DEFAULT NULL,
   `dob` date NOT NULL,
   `username` varchar(18) NOT NULL,
   `pass` varchar(65) NOT NULL,
@@ -93,6 +93,15 @@ CREATE TABLE `members` (
   `address` varchar(50) DEFAULT NULL,
   `status` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`uid`, `name`, `email`, `phno`, `gender`, `dob`, `username`, `pass`, `dp`, `address`, `status`) VALUES
+(1001, 'Megnus Mathews', 'megnus.heptopass@gmail.com', '01726331487', 'Male', '2022-12-06', 'Megnus', '1234/megnus', '', '', 'Basic'),
+(1008, 'Safuan Alam', 'saifee@gmail.com', '01726331481', '', '2000-06-15', 'Saifee', '1234@Saifee', '', '', 'Basic'),
+(1009, 'Mubashir Mohsin', 'mubashir.mohsin.42884@gmail.com', '01726331487', '', '1998-10-12', 'Mubashir', '11472#Muba', '', '', 'Basic');
 
 --
 -- Indexes for dumped tables
@@ -136,7 +145,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `uid` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
+  MODIFY `uid` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1010;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
