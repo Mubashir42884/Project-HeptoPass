@@ -22,7 +22,8 @@
     />
   </head>
 <body >
-<thead>
+   
+    <thead>
     <div class="fixed-header">
         <p align="center">
             <a class="logo" href="Home.php">
@@ -31,12 +32,10 @@
         </p>
         <nav align="right">
             <a href="Home.php">Home</a>
-            <a href="Signup.php">Registration</a>
+            <a href="../controllers/Logout.php">Log Out</a>
         </nav>
     </div>
-  </thead>
-
-
+    </thead>
 
 
   <input type="checkbox" id="check">
@@ -47,7 +46,7 @@
     <div class="sidebar">
         <header>HeptoPass</header>
         <ul>
-            <li><a href="#"><i class="fa-regular fa-user"></i>Profile</a></li>
+            <li><a href="memberProfile.php"><i class="fa-regular fa-user"></i>Profile</a></li>
             <li><a href="#"><i class="fa-brands fa-slack"></i>Expense Management</a></li>
             <li><a href="#"><i class="fa-solid fa-plus"></i>Extra Features</a></li>
             <li><a href="#"><i class="fa-solid fa-gear"></i>Settings</a></li>
@@ -55,16 +54,16 @@
         </ul>
     </div>
 
+    <div class="welcome">
+        <h1>Welcome Home, <span><?php echo $_SESSION['username']; ?></span></h1>
+    </div>
 
 
-
-
-
-  <tfoot>
-        <div class="fixed-footer">
-            <div class="foot">Copyright &copy; 2022 | HeptoPass</div>        
-        </div>
-  </tfoot>
+    <tfoot>
+            <div class="fixed-footer">
+                <div class="foot">Copyright &copy; 2022 | HeptoPass</div>        
+            </div>
+    </tfoot>
     
 </body>
 </html>

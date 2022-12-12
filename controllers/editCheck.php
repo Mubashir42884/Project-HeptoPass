@@ -1,8 +1,29 @@
 <?php
     session_start();
-    $dp = $_POST['dpsave'];
-    
-    if(isset($_FILES['dp'])){
+    //$dp = $_POST['dpsave'];
+        require_once("../models/membersModel.php");
+
+            $editname = $_POST['editname'];
+            $editemail = $_POST['editemail'];
+            $editphone = $_POST['editphone'];
+            $editaddress = $_POST['editaddress'];
+            $editdob = $_POST['editdob'];
+            $editgender = $_POST['editgender'];
+            $edituname = $_POST['edituname'];
+
+
+                $update = ['editname'=> $editname, 'editemail'=> $editemail, "editphone"=> $editphone, "editaddress"=> $editaddress, "editdob"=> $editdob, "editgender"=> $editgender, "edituname"=>$edituname];
+                $_SESSION['update'] = $update;
+                $validation = updateMember($update);
+                    if($validation){
+                        header('location: ../views/ViewProfile.php?edit=success');
+                    }else{
+                        header('location: ../views/ViewProfile.php?edit=unsuccess');
+                    }
+
+
+
+    /*if(isset($_FILES['dp'])){
         $file = $_FILES['dp'];
         $fileName = $_FILES['dp']['name'];
         $fileTmpName = $_FILES['dp']['tmp_name'];
@@ -36,5 +57,5 @@
         $fileName = $_FILES['dp']['name'];
         $_SESSION['user']['dp'] = $fileName;
         header("Location: ../views/members/ViewProfile.php?upload_success");
-    }
+    }*/
 ?>

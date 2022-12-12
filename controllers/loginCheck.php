@@ -13,6 +13,7 @@
         echo "<script>alert('Username & Password cannot be null!');</script>";
     }else if($status){
         $_SESSION['valid'] = 'true';
+        $_SESSION['username'] = $username;
         header('location: ../views/memberDashboard.php');
     }else{
         echo "<script>alert('Invalid User!!');</script>";

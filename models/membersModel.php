@@ -8,18 +8,40 @@
         return $status;
     }
 
-    function searchMemberById($loginInfo){
+    function searchMemberById($info){
         $con = getConnection();
-        $sql = "select * from members where username = '{$loginInfo['uname']}' and pass='{$loginInfo['pass']}'";
+        $sql = "select * from members where username = '{$info['username']}'";
         $status = mysqli_query($con, $sql);
 
-        if($status == 'false'){
-            return 'false';
+        $resultCheck = mysqli_num_rows($status);
+
+        if($resultCheck>0){
+            while($row = mysqli_fetch_assoc($status)){
+                $uid = $row['uid'];
+                $name = $row['name'];
+                $email = $row['email'];
+                $phone = $row['phno'];
+                $gender = $row['gender'];
+                $dob = $row['dob'];
+                $username = $row['username'];
+                $address = $row['address'];
+
+                $userinfo = ['uid'=>$uid, 'name'=>$name, 'email'=>$email, 'phone'=>$phone, 'gender'=>$gender, 'dob'=>$dob, 'username'=>$username, 'address'=>$address];
+
+                return $userinfo;
+            }
         }else{
-            return 'true';
+            return 'Null';
         }
     }
 
+    function updateMember($user){
+        $con = getConnection();
+        $uidd = $_SESSION['uid'];
+        $sql = "update members set name='{$user['editname']}', email='{$user['editemail']}', phno='{$user['editphone']}', gender='{$user['editgender']}', dob='{$user['editdob']}', username='{$user['edituname']}', address='{$user['editaddress']}', status='Basic' where uid = '{$uidd}'";
+        $status = mysqli_query($con, $sql);
+        return $status;
+    }
 
     function loginMember($user){
         $con = getConnection();

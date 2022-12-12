@@ -2,7 +2,7 @@
     session_start();
 
     if(isset($name) || isset($username) || isset($email) || isset($dob) || isset($phoneno) || isset($profilepic) || isset($gender)){
-        header('location: signup.php');
+        header('location: ../Signup.php');
     }
 
 ?>
@@ -16,9 +16,8 @@
 <body style="font-family: Quicksand ;">
     <table border="0">
         <tr bgcolor="#4e0755">
-
             <th style='border:white;' align="center" colspan="2">
-                <a href="Member Dashboard.php"><img src="Logo.png" height="180"></a>
+                <a href="Member Dashboard.php"><img src="../../assets/Logo.png" height="180"></a>
 
                 <p style='border:none; font-size: 20;' align="right">
                     <a href="ViewProfile.php" style="color: #99d9ea ;">
@@ -28,14 +27,14 @@
                         ?>
                     </a>&nbsp;|&nbsp;
                     <a href="Home.php" style="color: #99d9ea ;">Home</a>&nbsp;|&nbsp;&nbsp;
-                    <a href="Logout.php" style="color: #99d9ea ;">&nbsp;Log Out</a>&nbsp;&nbsp;
+                    <a href="../../controllers/Logout.php" style="color: #99d9ea ;">&nbsp;Log Out</a>&nbsp;&nbsp;
                 </p>
             </th>
         </tr>
 
         <tr style="font-size: 26px;">
             <td align="center">
-                <form method="post" action="editCheck.php" enctype="multipart/form-data">
+                <form method="post" action="../../controllers/editCheck.php" enctype="multipart/form-data">
 
                     <fieldset style=" border-radius: 30px; width: 750px;">
                         <legend style="color: #4e0755; border-radius: 5px;"><b>UPLOAD PROFILE PICTURE</b></legend>
@@ -44,7 +43,7 @@
                                 <td style="color: #4e0755;">Profile Picture</td>
                                 <td> : </td>
                                 <td>
-                                        <img src="upload_dp.png" height=120>
+                                        <img src="../../assets/upload_dp.png" height=120>
                                         <br><input type="file" name="dp" style="font-family:'Quicksand'; font-size: 18px;">
                                         <input type="submit" name="dpsave" value="Upload" style="font-family:'Quicksand'; font-size: 22px; font-weight:500;">
 

@@ -33,9 +33,9 @@
     </div>
   </thead>
 
-    <div class="container">
+    <div class="container-login">
       <header class="login-header">MEMBER LOGIN</header>
-      <form method="post" action="../controllers/loginCheck.php">
+      <form class="form" method="post" action="../controllers/loginCheck.php">
 
         <div class="field uid-field">
           <div class="login-field">

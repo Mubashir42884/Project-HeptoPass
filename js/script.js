@@ -69,3 +69,23 @@ form.addEventListener("submit", (e) => {
     location.href = form.getAttribute("action");
   }
 });
+
+
+
+var columnDefs = [
+  {headerName: '', field: ''},
+  {headerName: '', field: ''},
+  {headerName: '', field: ''},
+  {headerName: '', field: ''},
+  {headerName: '', field: ''},
+  {headerName: '', field: ''},
+  {headerName: '', field: ''},
+]
+
+var rowDefs = [
+  
+]
+
+
+
+

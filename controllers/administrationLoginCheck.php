@@ -25,6 +25,4 @@
     }else{
         echo "invalid user";
     }
-
-
 ?>
